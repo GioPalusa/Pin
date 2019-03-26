@@ -80,35 +80,35 @@ extension Layoutable {
 
 #if os(iOS) || os(tvOS)
     public extension Layoutable {
-        public var leftMarginPin: LayoutPin {
+        var leftMarginPin: LayoutPin {
             return LayoutPin(item: self, attribute: .leftMargin)
         }
 
-        public var rightMarginPin: LayoutPin {
+        var rightMarginPin: LayoutPin {
             return LayoutPin(item: self, attribute: .rightMargin)
         }
 
-        public var topMarginPin: LayoutPin {
+        var topMarginPin: LayoutPin {
             return LayoutPin(item: self, attribute: .topMargin)
         }
 
-        public var bottomMarginPin: LayoutPin {
+        var bottomMarginPin: LayoutPin {
             return LayoutPin(item: self, attribute: .bottomMargin)
         }
 
-        public var leadingMarginPin: LayoutPin {
+        var leadingMarginPin: LayoutPin {
             return LayoutPin(item: self, attribute: .leadingMargin)
         }
 
-        public var trailingMarginPin: LayoutPin {
+        var trailingMarginPin: LayoutPin {
             return LayoutPin(item: self, attribute: .trailingMargin)
         }
 
-        public var edgeMarginPins: [LayoutPin] {
+        var edgeMarginPins: [LayoutPin] {
             return [topMarginPin, leftMarginPin, bottomMarginPin, rightMarginPin]
         }
 
-        public func pinEdgeMargins(to other: Layoutable, insets: Insets = Insets(top: 0, left: 0, bottom: 0, right: 0)) -> [NSLayoutConstraint] {
+        func pinEdgeMargins(to other: Layoutable, insets: Insets = Insets(top: 0, left: 0, bottom: 0, right: 0)) -> [NSLayoutConstraint] {
             return [
                 leftPin == other.leftMarginPin + insets.left,
                 rightPin == other.rightMarginPin - insets.right,
@@ -120,11 +120,11 @@ extension Layoutable {
     }
 
     public extension UILayoutSupport {
-        public var topPin: LayoutPin {
+        var topPin: LayoutPin {
             return LayoutPin(item: self, attribute: .top)
         }
 
-        public var bottomPin: LayoutPin {
+        var bottomPin: LayoutPin {
             return LayoutPin(item: self, attribute: .bottom)
         }
     }
@@ -137,16 +137,16 @@ extension LayoutGuide: Layoutable {}
 extension View: Layoutable {}
 
 public extension View {
-    public var baselinePin: LayoutPin {
+    var baselinePin: LayoutPin {
         return LayoutPin(item: self, attribute: .lastBaseline)
     }
 
     @available(iOS 8.0, OSX 10.11, *)
-    public var firstBaselinePin: LayoutPin {
+    var firstBaselinePin: LayoutPin {
         return LayoutPin(item: self, attribute: .firstBaseline)
     }
 
-    public var lastBaselinePin: LayoutPin {
+    var lastBaselinePin: LayoutPin {
         return LayoutPin(item: self, attribute: .lastBaseline)
     }
 }

@@ -75,7 +75,7 @@ public struct LayoutPin {
     }
 
     @available(*, deprecated: 1.2.0, renamed: "lessThanOrEqual(to:)")
-    public func lessThanOrEquals(_ constant: CGFloat) -> NSLayoutConstraint {
+     func lessThanOrEquals(_ constant: CGFloat) -> NSLayoutConstraint {
         return lessThanOrEqual(to: constant)
     }
 
@@ -85,7 +85,7 @@ public struct LayoutPin {
 }
 
 internal extension LayoutPin {
-    internal func createConstraint(combining other: LayoutPin, relatedBy relation: NSLayoutConstraint.Relation) -> NSLayoutConstraint {
+    func createConstraint(combining other: LayoutPin, relatedBy relation: NSLayoutConstraint.Relation) -> NSLayoutConstraint {
         return NSLayoutConstraint(
             item: self.item,
             attribute: attribute,
@@ -97,7 +97,7 @@ internal extension LayoutPin {
         )
     }
 
-    internal func createConstraint(withConstant constant: CGFloat, relatedBy relation: NSLayoutConstraint.Relation) -> NSLayoutConstraint {
+    func createConstraint(withConstant constant: CGFloat, relatedBy relation: NSLayoutConstraint.Relation) -> NSLayoutConstraint {
         return NSLayoutConstraint(
             item: self.item,
             attribute: attribute,

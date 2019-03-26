@@ -19,15 +19,15 @@ extension NSLayoutConstraint {
 
 @available(OSX 10.10, iOS 8.0, tvOS 9.0, *)
 public extension Sequence where Iterator.Element == NSLayoutConstraint {
-    public func activate() {
+    func activate() {
         NSLayoutConstraint.activate(Array(self))
     }
 
-    public func deactivate() {
+    func deactivate() {
         NSLayoutConstraint.deactivate(Array(self))
     }
 
-    public func prioritized(at priority: LayoutPriority) -> [NSLayoutConstraint] {
+    func prioritized(at priority: LayoutPriority) -> [NSLayoutConstraint] {
         return map { constraint in
             constraint.priority = priority
             return constraint
@@ -42,6 +42,6 @@ precedencegroup ConstraintPriorityPrecedence {
 
 infix operator ~ : ConstraintPriorityPrecedence
 
-public func ~ (lhs: NSLayoutConstraint, rhs: LayoutPriority) -> NSLayoutConstraint {
-    return lhs.prioritized(at: rhs)
+public func ~ (lhs: NSLayoutConstraint, rhs: Float) -> NSLayoutConstraint {
+    return lhs.prioritized(at: LayoutPriority(rawValue: rhs))
 }
