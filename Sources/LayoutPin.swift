@@ -6,11 +6,11 @@
 
 public struct LayoutPin {
     public let item: AnyObject
-    public let attribute: NSLayoutAttribute
+    public let attribute: NSLayoutConstraint.Attribute
     public var multiplier: CGFloat
     public var constant: CGFloat
 
-    public init(item: AnyObject, attribute: NSLayoutAttribute, multiplier: CGFloat = 1, constant: CGFloat = 0) {
+    public init(item: AnyObject, attribute: NSLayoutConstraint.Attribute, multiplier: CGFloat = 1, constant: CGFloat = 0) {
         self.item = item
         self.attribute = attribute
         self.multiplier = multiplier
@@ -85,7 +85,7 @@ public struct LayoutPin {
 }
 
 internal extension LayoutPin {
-    internal func createConstraint(combining other: LayoutPin, relatedBy relation: NSLayoutRelation) -> NSLayoutConstraint {
+    internal func createConstraint(combining other: LayoutPin, relatedBy relation: NSLayoutConstraint.Relation) -> NSLayoutConstraint {
         return NSLayoutConstraint(
             item: self.item,
             attribute: attribute,
@@ -97,7 +97,7 @@ internal extension LayoutPin {
         )
     }
 
-    internal func createConstraint(withConstant constant: CGFloat, relatedBy relation: NSLayoutRelation) -> NSLayoutConstraint {
+    internal func createConstraint(withConstant constant: CGFloat, relatedBy relation: NSLayoutConstraint.Relation) -> NSLayoutConstraint {
         return NSLayoutConstraint(
             item: self.item,
             attribute: attribute,
