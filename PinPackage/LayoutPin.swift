@@ -29,54 +29,24 @@ public struct LayoutPin {
         return new
     }
 
-    @available(*, deprecated: 1.2.0, renamed: "equal(to:)")
-    public func equals(_ other: LayoutPin) -> NSLayoutConstraint {
-        return equal(to: other)
-    }
-
     public func equal(to other: LayoutPin) -> NSLayoutConstraint {
         return createConstraint(combining: other, relatedBy: .equal)
-    }
-
-    @available(*, deprecated: 1.2.0, renamed: "greaterThanOrEqual(to:)")
-    public func greaterThanOrEquals(_ other: LayoutPin) -> NSLayoutConstraint {
-        return greaterThanOrEqual(to: other)
     }
 
     public func greaterThanOrEqual(to other: LayoutPin) -> NSLayoutConstraint {
         return createConstraint(combining: other, relatedBy: .greaterThanOrEqual)
     }
 
-    @available(*, deprecated: 1.2.0, renamed: "lessThanOrEqual(to:)")
-    public func lessThanOrEquals(_ other: LayoutPin) -> NSLayoutConstraint {
-        return lessThanOrEqual(to: other)
-    }
-
     public func lessThanOrEqual(to other: LayoutPin) -> NSLayoutConstraint {
         return createConstraint(combining: other, relatedBy: .lessThanOrEqual)
-    }
-
-    @available(*, deprecated: 1.2.0, renamed: "equal(to:)")
-    public func equals(_ constant: CGFloat) -> NSLayoutConstraint {
-        return equal(to: constant)
     }
 
     public func equal(to constant: CGFloat) -> NSLayoutConstraint {
         return createConstraint(withConstant: constant, relatedBy: .equal)
     }
 
-    @available(*, deprecated: 1.2.0, renamed: "greaterThanOrEqual(to:)")
-    public func greaterThanOrEquals(_ constant: CGFloat) -> NSLayoutConstraint {
-        return greaterThanOrEqual(to: constant)
-    }
-
     public func greaterThanOrEqual(to constant: CGFloat) -> NSLayoutConstraint {
         return createConstraint(withConstant: constant, relatedBy: .greaterThanOrEqual)
-    }
-
-    @available(*, deprecated: 1.2.0, renamed: "lessThanOrEqual(to:)")
-     func lessThanOrEquals(_ constant: CGFloat) -> NSLayoutConstraint {
-        return lessThanOrEqual(to: constant)
     }
 
     public func lessThanOrEqual(to constant: CGFloat) -> NSLayoutConstraint {

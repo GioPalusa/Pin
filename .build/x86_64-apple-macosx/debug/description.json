@@ -1,0 +1,19 @@
+{
+  "builtTestProducts" : [
+    {
+      "binaryPath" : "\/Users\/Giovanni\/Documents\/App-Projekt\/Pin\/.build\/x86_64-apple-macosx\/debug\/PinPackageTests.xctest\/Contents\/MacOS\/PinPackageTests",
+      "packageName" : "Pin",
+      "productName" : "PinPackageTests"
+    }
+  ],
+  "copyCommands" : {
+
+  },
+  "swiftTargetMap" : {
+    "C.Pin-debug.module" : "Pin",
+    "C.PinTests-debug.module" : "PinTests"
+  },
+  "testDiscoveryCommands" : {
+
+  }
+}

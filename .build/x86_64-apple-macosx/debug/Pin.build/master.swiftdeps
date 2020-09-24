@@ -1,0 +1,5 @@
+version: "Apple Swift version 5.3 (swiftlang-1200.0.29.2 clang-1200.0.30.1)"
+options: "0c4f33d9e180d29f076f6d62b3a8c9d7"
+build_time: [1600946855, 183201000]
+inputs:
+  "/Users/Giovanni/Documents/App-Projekt/Pin/Sources/Pin/Pin.swift": [1600946779, 499363605]
