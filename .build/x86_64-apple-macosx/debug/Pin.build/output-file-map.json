@@ -1,0 +1,11 @@
+{
+  "": {
+    "swift-dependencies": "/Users/Giovanni/Documents/App-Projekt/Pin/.build/x86_64-apple-macosx/debug/Pin.build/master.swiftdeps"
+  },
+  "/Users/Giovanni/Documents/App-Projekt/Pin/Sources/Pin/Pin.swift": {
+    "dependencies": "/Users/Giovanni/Documents/App-Projekt/Pin/.build/x86_64-apple-macosx/debug/Pin.build/Pin.d",
+    "object": "/Users/Giovanni/Documents/App-Projekt/Pin/.build/x86_64-apple-macosx/debug/Pin.build/Pin.swift.o",
+    "swiftmodule": "/Users/Giovanni/Documents/App-Projekt/Pin/.build/x86_64-apple-macosx/debug/Pin.build/Pin~partial.swiftmodule",
+    "swift-dependencies": "/Users/Giovanni/Documents/App-Projekt/Pin/.build/x86_64-apple-macosx/debug/Pin.build/Pin.swiftdeps"
+  }
+}

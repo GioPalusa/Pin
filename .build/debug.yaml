@@ -1,0 +1,78 @@
+client:
+  name: basic
+tools: {}
+targets:
+  "PackageStructure": ["<PackageStructure>"]
+  "Pin-debug.module": ["<Pin-debug.module>"]
+  "PinPackageTests-debug.test": ["<PinPackageTests-debug.test>"]
+  "PinTests-debug.module": ["<PinTests-debug.module>"]
+  "main": ["<Pin-debug.module>"]
+  "test": ["<Pin-debug.module>","<PinPackageTests-debug.test>","<PinTests-debug.module>"]
+default: "main"
+nodes:
+  "/Users/Giovanni/Documents/App-Projekt/Pin/Sources/Pin/":
+    is-directory-structure: true
+  "/Users/Giovanni/Documents/App-Projekt/Pin/Tests/PinTests/":
+    is-directory-structure: true
+commands:
+  "<Pin-debug.module>":
+    tool: phony
+    inputs: ["/Users/Giovanni/Documents/App-Projekt/Pin/.build/x86_64-apple-macosx/debug/Pin.build/Pin.swift.o","/Users/Giovanni/Documents/App-Projekt/Pin/.build/x86_64-apple-macosx/debug/Pin.swiftmodule"]
+    outputs: ["<Pin-debug.module>"]
+
+  "<PinPackageTests-debug.test>":
+    tool: phony
+    inputs: ["/Users/Giovanni/Documents/App-Projekt/Pin/.build/x86_64-apple-macosx/debug/PinPackageTests.xctest/Contents/MacOS/PinPackageTests"]
+    outputs: ["<PinPackageTests-debug.test>"]
+
+  "<PinTests-debug.module>":
+    tool: phony
+    inputs: ["/Users/Giovanni/Documents/App-Projekt/Pin/.build/x86_64-apple-macosx/debug/PinTests.build/PinTests.swift.o","/Users/Giovanni/Documents/App-Projekt/Pin/.build/x86_64-apple-macosx/debug/PinTests.build/XCTestManifests.swift.o","/Users/Giovanni/Documents/App-Projekt/Pin/.build/x86_64-apple-macosx/debug/PinTests.swiftmodule"]
+    outputs: ["<PinTests-debug.module>"]
+
+  "C.Pin-debug.module":
+    tool: swift-compiler
+    inputs: ["/Users/Giovanni/Documents/App-Projekt/Pin/Sources/Pin/Pin.swift"]
+    outputs: ["/Users/Giovanni/Documents/App-Projekt/Pin/.build/x86_64-apple-macosx/debug/Pin.build/Pin.swift.o","/Users/Giovanni/Documents/App-Projekt/Pin/.build/x86_64-apple-macosx/debug/Pin.swiftmodule"]
+    executable: "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc"
+    module-name: "Pin"
+    module-output-path: "/Users/Giovanni/Documents/App-Projekt/Pin/.build/x86_64-apple-macosx/debug/Pin.swiftmodule"
+    import-paths: ["/Users/Giovanni/Documents/App-Projekt/Pin/.build/x86_64-apple-macosx/debug"]
+    temps-path: "/Users/Giovanni/Documents/App-Projekt/Pin/.build/x86_64-apple-macosx/debug/Pin.build"
+    objects: ["/Users/Giovanni/Documents/App-Projekt/Pin/.build/x86_64-apple-macosx/debug/Pin.build/Pin.swift.o"]
+    other-args: ["-target","x86_64-apple-macosx10.10","-swift-version","5","-enable-batch-mode","-index-store-path","/Users/Giovanni/Documents/App-Projekt/Pin/.build/x86_64-apple-macosx/debug/index/store","-sdk","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk","-F","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks","-I","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib","-L","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib","-Onone","-enable-testing","-g","-j4","-DSWIFT_PACKAGE","-DDEBUG","-module-cache-path","/Users/Giovanni/Documents/App-Projekt/Pin/.build/x86_64-apple-macosx/debug/ModuleCache","-parseable-output","-emit-objc-header","-emit-objc-header-path","/Users/Giovanni/Documents/App-Projekt/Pin/.build/x86_64-apple-macosx/debug/Pin.build/Pin-Swift.h","-color-diagnostics"]
+    sources: ["/Users/Giovanni/Documents/App-Projekt/Pin/Sources/Pin/Pin.swift"]
+    is-library: true
+    enable-whole-module-optimization: false
+    num-threads: 4
+
+  "C.PinPackageTests-debug.test":
+    tool: shell
+    inputs: ["/Users/Giovanni/Documents/App-Projekt/Pin/.build/x86_64-apple-macosx/debug/Pin.build/Pin.swift.o","/Users/Giovanni/Documents/App-Projekt/Pin/.build/x86_64-apple-macosx/debug/PinTests.build/PinTests.swift.o","/Users/Giovanni/Documents/App-Projekt/Pin/.build/x86_64-apple-macosx/debug/PinTests.build/XCTestManifests.swift.o"]
+    outputs: ["/Users/Giovanni/Documents/App-Projekt/Pin/.build/x86_64-apple-macosx/debug/PinPackageTests.xctest/Contents/MacOS/PinPackageTests"]
+    description: "Linking ./.build/x86_64-apple-macosx/debug/PinPackageTests.xctest/Contents/MacOS/PinPackageTests"
+    args: ["/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc","-sdk","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk","-F","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks","-I","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib","-L","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib","-L","/Users/Giovanni/Documents/App-Projekt/Pin/.build/x86_64-apple-macosx/debug","-o","/Users/Giovanni/Documents/App-Projekt/Pin/.build/x86_64-apple-macosx/debug/PinPackageTests.xctest/Contents/MacOS/PinPackageTests","-module-name","PinPackageTests","-Xlinker","-bundle","-Xlinker","-rpath","-Xlinker","@loader_path/../../../","@/Users/Giovanni/Documents/App-Projekt/Pin/.build/x86_64-apple-macosx/debug/PinPackageTests.product/Objects.LinkFileList","-Xlinker","-rpath","-Xlinker","/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx","-target","x86_64-apple-macosx10.15","-Xlinker","-add_ast_path","-Xlinker","/Users/Giovanni/Documents/App-Projekt/Pin/.build/x86_64-apple-macosx/debug/Pin.swiftmodule","-Xlinker","-add_ast_path","-Xlinker","/Users/Giovanni/Documents/App-Projekt/Pin/.build/x86_64-apple-macosx/debug/PinTests.swiftmodule","-L","/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib"]
+
+  "C.PinTests-debug.module":
+    tool: swift-compiler
+    inputs: ["/Users/Giovanni/Documents/App-Projekt/Pin/Tests/PinTests/PinTests.swift","/Users/Giovanni/Documents/App-Projekt/Pin/Tests/PinTests/XCTestManifests.swift","/Users/Giovanni/Documents/App-Projekt/Pin/.build/x86_64-apple-macosx/debug/Pin.swiftmodule"]
+    outputs: ["/Users/Giovanni/Documents/App-Projekt/Pin/.build/x86_64-apple-macosx/debug/PinTests.build/PinTests.swift.o","/Users/Giovanni/Documents/App-Projekt/Pin/.build/x86_64-apple-macosx/debug/PinTests.build/XCTestManifests.swift.o","/Users/Giovanni/Documents/App-Projekt/Pin/.build/x86_64-apple-macosx/debug/PinTests.swiftmodule"]
+    executable: "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc"
+    module-name: "PinTests"
+    module-output-path: "/Users/Giovanni/Documents/App-Projekt/Pin/.build/x86_64-apple-macosx/debug/PinTests.swiftmodule"
+    import-paths: ["/Users/Giovanni/Documents/App-Projekt/Pin/.build/x86_64-apple-macosx/debug"]
+    temps-path: "/Users/Giovanni/Documents/App-Projekt/Pin/.build/x86_64-apple-macosx/debug/PinTests.build"
+    objects: ["/Users/Giovanni/Documents/App-Projekt/Pin/.build/x86_64-apple-macosx/debug/PinTests.build/PinTests.swift.o","/Users/Giovanni/Documents/App-Projekt/Pin/.build/x86_64-apple-macosx/debug/PinTests.build/XCTestManifests.swift.o"]
+    other-args: ["-target","x86_64-apple-macosx10.15","-swift-version","5","-enable-batch-mode","-index-store-path","/Users/Giovanni/Documents/App-Projekt/Pin/.build/x86_64-apple-macosx/debug/index/store","-sdk","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk","-F","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks","-I","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib","-L","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib","-Onone","-enable-testing","-g","-j4","-DSWIFT_PACKAGE","-DDEBUG","-module-cache-path","/Users/Giovanni/Documents/App-Projekt/Pin/.build/x86_64-apple-macosx/debug/ModuleCache","-parseable-output","-color-diagnostics"]
+    sources: ["/Users/Giovanni/Documents/App-Projekt/Pin/Tests/PinTests/PinTests.swift","/Users/Giovanni/Documents/App-Projekt/Pin/Tests/PinTests/XCTestManifests.swift"]
+    is-library: true
+    enable-whole-module-optimization: false
+    num-threads: 4
+
+  "PackageStructure":
+    tool: package-structure-tool
+    inputs: ["/Users/Giovanni/Documents/App-Projekt/Pin/Sources/Pin/","/Users/Giovanni/Documents/App-Projekt/Pin/Tests/PinTests/","/Users/Giovanni/Documents/App-Projekt/Pin/Package.swift","/Users/Giovanni/Documents/App-Projekt/Pin/Package.resolved"]
+    outputs: ["<PackageStructure>"]
+    description: "Planning build"
+    allow-missing-inputs: true
+

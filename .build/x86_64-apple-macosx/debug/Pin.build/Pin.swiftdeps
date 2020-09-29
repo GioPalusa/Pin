@@ -1,0 +1,22 @@
+### Swift dependencies file v0 ###
+provides-top-level:
+- "Pin"
+provides-nominal:
+- "3PinAAV"
+provides-member:
+- ["3PinAAV", ""]
+provides-dynamic-lookup:
+depends-top-level:
+- "Pin"
+- "StringLiteralType"
+depends-member:
+- ["3PinAAV", "init"]
+- ["3PinAAV", "text"]
+- ["s34_ExpressibleByBuiltinStringLiteralP", "init"]
+depends-nominal:
+- "3PinAAV"
+- "s34_ExpressibleByBuiltinStringLiteralP"
+depends-dynamic-lookup:
+depends-external:
+- "/Users/Giovanni/Documents/App-Projekt/Pin/.build/x86_64-apple-macosx/debug/Pin.build/module.modulemap"
+interface-hash: "70feba1f2a76e84a920c3fd663a58d10"

@@ -1,0 +1,4 @@
+module Pin {
+    header "/Users/Giovanni/Documents/App-Projekt/Pin/.build/x86_64-apple-macosx/debug/Pin.build/Pin-Swift.h"
+    requires objc
+}
